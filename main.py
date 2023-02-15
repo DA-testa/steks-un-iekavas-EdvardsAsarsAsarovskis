@@ -12,10 +12,8 @@ def find_mismatch(text):
     for i, next in enumerate(text):
         if next in "([{":
             opening_brackets_stack.append(Bracket(next, i + 1))
-            # Process opening bracket, write your code here
-           
 
-        if next in ")]}": 
+        if next in ")]}":
             if not opening_brackets_stack:
                 return i + 1
             top = opening_brackets_stack.pop()
@@ -32,27 +30,13 @@ def find_mismatch(text):
 
 
 def main():
-    choice = input("Choose between using input or test files: 'I' for input or 'F' for test files: ")
-    if choice == 'I':
-        text = input("Enter a sequence of brackets: ")
-        mismatch = find_mismatch(text)
+    choice = input()
+    text = input()
+    mismatch = find_mismatch(text)
+    if choice == "I":
         print(mismatch)
-    elif choice == 'F':
-        test_files = ["test/0.a", "test/1.a", "test/2.a", "test/3.a", "test/4.a", "test/5.a"]
-        for test_file in test_files:
-            with open(test_file + "") as f:
-                expected_output = f.readline().strip()
-
-            with open(test_file) as f:
-                text = f.readline().strip()
-
-            output = find_mismatch(text)
-            if output == expected_output:
-                print(f"{test_file}: OK")
-            else:
-                print(f"{test_file}: Failed. Expected {expected_output}, but got {output}")
     else:
-        print("Invalid choice. Please choose 'I' or 'F'.")
+        print(mismatch)
 
 
 if __name__ == "__main__":
