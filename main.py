@@ -1,5 +1,3 @@
-# python3
-
 from collections import namedtuple
 
 Bracket = namedtuple("Bracket", ["char", "position"])
@@ -34,7 +32,7 @@ def find_mismatch(text):
 
 
 def main():
-    choice = input("Izvēle starp failiem: 'I' input or 'F' test files: ")
+    choice = input("Choose between using input or test files: 'I' for input or 'F' for test files: ")
     if choice == 'I':
         text = input("Enter a sequence of brackets: ")
         mismatch = find_mismatch(text)
@@ -55,7 +53,6 @@ def main():
                 print(f"{test_file}: Failed. Expected {expected_output}, but got {output}")
     else:
         print("Invalid choice. Please choose 'I' or 'F'.")
-    # Printing answer, write your code here
 
 
 if __name__ == "__main__":
