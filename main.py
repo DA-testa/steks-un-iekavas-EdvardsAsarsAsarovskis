@@ -38,9 +38,9 @@ def main():
         mismatch = find_mismatch(text)
         print(mismatch)
     elif choice == 'F':
-        test_files = ["tests/01", "tests/02", "tests/03", "tests/04", "tests/05", "tests/06", "tests/07", "tests/08", "tests/09", "tests/10"]
+        test_files = ["test/0.a", "test/1.a", "test/2.a", "test/3.a", "test/4.a", "test/5.a"]
         for test_file in test_files:
-            with open(test_file + ".a") as f:
+            with open(test_file + "") as f:
                 expected_output = f.readline().strip()
 
             with open(test_file) as f:
